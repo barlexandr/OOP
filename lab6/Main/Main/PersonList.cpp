@@ -102,21 +102,9 @@ void PersonList::RandomPersonAdd()
 	int randomSurnameIndex = rand() % 14; //Случайный индекс для фамилии
 
 	string NAME = name[randomNameIndex];
-	//size_t sizeName = strlen(name[randomNameIndex].c_str()) + 1;
-	//char *charName = new char[sizeName + 1];
-	//strcpy_s(charName, sizeName, NAME.c_str());
-
 	string SURNAME = surname[randomSurnameIndex];
-	//size_t sizeSurname = strlen(surname[randomSurnameIndex].c_str()) + 1;
-	//char *charSurname = new char[sizeSurname + 1];
-	//strcpy_s(charSurname, sizeSurname, SURNAME.c_str());
 
-
-	//Person *randPerson = MakeRandomPerson(charName, charSurname, randomNameIndex);
 	Person *randPerson = MakeRandomPerson(NAME, SURNAME, randomNameIndex);
-
-	//delete[] charName; charName = nullptr;
-	//delete[] charSurname; charSurname = nullptr;
 
 	Add(new Person(*randPerson));
 
@@ -129,17 +117,8 @@ Person *PersonList::MakeRandomPerson(string Name, string Surname, int randomName
 	Person *randPerson = new Person;
 
 	//Заполнение данными
-	//int i(0);
-	//for (; i < NAMELENGTH && name[i]; ++i)
-	//	randPerson->name[i] = name[i];
-	//randPerson->name[i] = '\0';
 	randPerson->SetName(Name);
 	randPerson->SetSurname(Surname);
-
-	//int j(0);
-	//for (; j < SURNAMELENGTH && surname[j]; ++j)
-	//	randPerson->surname[j] = surname[j];
-	//randPerson->surname[j] = '\0';
 
 	int years = rand() % 121 + 0;
 	randPerson->SetAge(years);
@@ -269,25 +248,21 @@ string PersonList::OutputInformation()
 
 	PersonListItem *item = _head;
 
-	while (item)
-	{
-		if (item->GetValue()->GetAge() > 17)
-		{
-			information.append(item->GetValue()->GetDiscription());
-				item = item->next;
-		}
-	
-	}
+	//Person *temp = item->GetValue()->
+	//while (item)
+	//{
+	//	if (item->GetValue()->GetAge() > 17)
+	//	{
+	//		information.append(item->GetValue()->GetDiscription());
+	//			item = item->next;
+	//	}
+	//
+	//}
 
-	if (!_head)
-	{
-		cout << "Head = NULL \t Tail = NULL " << endl;
-	}
-
-
-
-
-
+	//if (!_head)
+	//{
+	//	cout << "Head = NULL \t Tail = NULL " << endl;
+	//}
 
 	return information;
 }

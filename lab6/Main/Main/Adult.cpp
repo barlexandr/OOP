@@ -68,9 +68,9 @@ Adult* Adult::RandomAdult()
 	string work[] {"Microsoft", "Google", "Apple", "Samsung", "Oracle", "IBM", "Cisco",
 		"Adobe", "Workday", "Yandex", "Amazom"};
 
-	int randomNameIndex = rand() % 14;		//Случайный индекс для имени
-	int randomSurnameIndex = rand() % 14;	//Случайный индекс для фамилии
-	int randomWorkIndex = rand() % 10;		//Случайный индекс для места работы
+	int randomNameIndex = rand() % 15;		//Случайный индекс для имени
+	int randomSurnameIndex = rand() % 15;	//Случайный индекс для фамилии
+	int randomWorkIndex = rand() % 11;		//Случайный индекс для места работы
 
 	string nameAdult = name[randomNameIndex];
 	string surnameAdult = surname[randomSurnameIndex];
@@ -99,7 +99,7 @@ Adult* Adult::RandomAdult()
 
 			unsigned int womenRandomIndex = rand() % 8 + 8;
 			string nameWomen = name[womenRandomIndex];
-			unsigned yearsWomen = rand() % 83 + 18;
+			unsigned int yearsWomen = rand() % 83 + 18;
 
 			adultWomen->SetName(nameWomen);
 			adultWomen->SetSurname(surnameAdult);
@@ -113,9 +113,9 @@ Adult* Adult::RandomAdult()
 		{
 			Adult *adultMen = new Adult;
 
-			unsigned int menRandomIndex = rand() % 8 + 0;
+			unsigned int menRandomIndex = rand() % 8;
 			string nameMen = name[menRandomIndex];
-			unsigned yearsMen = rand() % 83 + 18;
+			unsigned int yearsMen = rand() % 83 + 18;
 
 			adultMen->SetName(nameMen);
 			adultMen->SetSurname(surnameAdult);

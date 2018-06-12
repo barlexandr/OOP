@@ -64,7 +64,7 @@ unsigned int Child::GetAge()
 Person* Child::RandomFather(string surnameFather)
 {
 	string name[] { "Mark", "Jack", "Ken", "Anton", "John", "Jorj", "Den", "Bill"};
-	unsigned int fatherRandomIndex = rand() % 8 + 0;
+	unsigned int fatherRandomIndex = rand() % 8;
 	string nameFather = name[fatherRandomIndex];
 	unsigned int ageFather = rand() % 83 + 18;
 
@@ -81,7 +81,7 @@ Person* Child::RandomFather(string surnameFather)
 Person* Child::RandomMother(string surnameMather)
 {
 	string name[] {"Alexa", "Amy", "Grace", "Jane", "Jasmine", "Ella", "Clara" };
-	unsigned int motherRandomIndex = rand() % 7 + 0;
+	unsigned int motherRandomIndex = rand() % 7;
 	string nameMother = name[motherRandomIndex];
 	unsigned int ageMother = rand() % 83 + 18;
 
@@ -102,8 +102,8 @@ Child* Child::RandomChild()
 	string surname[] {"Bishep", "Macey", "Alsopp", "Fisher", "Farrell", "Taft", "Porter",
 		"Finch", "Waller", "Sherlok", "Roberts", "Waller", "Hawkins", "Wood", "Turner"};
 	
-	int randomNameIndex = rand() % 14;		//Случайный индекс для имени
-	int randomSurnameIndex = rand() % 14;	//Случайный индекс для фамилии
+	int randomNameIndex = rand() % 15;		//Случайный индекс для имени
+	int randomSurnameIndex = rand() % 15;	//Случайный индекс для фамилии
 
 	string nameChild = name[randomNameIndex];
 	string surnameChild = surname[randomSurnameIndex];
@@ -124,21 +124,21 @@ Child* Child::RandomChild()
 		Person *mother = RandomMother(surnameChild);
 		child->Mother = mother;
 	}
-	else if (parents == 2)
+	if (parents == 2)
 	{
 		Person *father = RandomFather(surnameChild);
 
 		child->Father = father;
 		child->Mother = nullptr;
 	}
-	else if (parents == 3)
+	if (parents == 3)
 	{
 		Person *mother = RandomMother(surnameChild);
 
 		child->Mother = mother;
 		child->Father = nullptr;
 	}
-	else if (parents == 4)
+	if (parents == 4)
 	{
 		child->Father = nullptr;
 		child->Mother = nullptr;
@@ -153,7 +153,8 @@ Child* Child::RandomChild()
 		string kindergartenChild = kindergarten[randomKindergartenIndex];
 		child->school = kindergartenChild;
 	}
-	else if (yearsAdult > 7)
+	else 
+		///if (yearsAdult > 7)
 	{
 		string school[] {"Luceum №3", "Gorky school", "School named after Lomonosov", "Luceum TGY",
 			"Gymnasium №7", "School №76", "School №35"};

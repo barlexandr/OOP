@@ -38,14 +38,32 @@ int main()
 				cout << adult->GetDiscription() << endl;
 			}
 		}	
+
+		SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 12));
+		cout << "\n\nProgrammatically define the type 4 person in our list." << endl;
+		SetConsoleTextAttribute(hConsole, (WORD)((0 << 4) | 7));
+		Person *find = list->Find(3);
+		
+		if (find->GetAge() < 18)
+		{
+			cout << "This is a child." << endl;
+			Child *child = (Child*)find;
+			cout << child->GetDiscription() << endl;
+		}
+		else
+		{
+			cout << "This is an adult." << endl;
+			Adult *adult = (Adult*)find;
+			cout << adult->GetDiscription() << endl;
+		}
+
+
 	}
 	catch (...)
 	{
-		puts("ERORCYKA");
+		puts("EROR");
 	}
-	//list->
 
 	system("pause");
-
 }
 
