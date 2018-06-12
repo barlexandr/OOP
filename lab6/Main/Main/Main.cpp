@@ -8,8 +8,8 @@ int main()
 	setlocale(LC_ALL, "Rus");
 	try
 	{
-	/*Получение дескриптора*/
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+		/*Получение дескриптора*/
+		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 		PersonList *list = new PersonList;
 		const int countOfPersonAdded = 7;
