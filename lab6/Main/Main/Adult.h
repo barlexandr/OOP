@@ -4,7 +4,7 @@
 class Adult : public Person
 {
 private:
-	string workPlase;
+	string _workPlase;
 public:
 	Person *MarriedOn = nullptr;
 

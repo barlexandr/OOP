@@ -17,12 +17,12 @@ string Adult::GetDiscription()
 			.append(".\n");
 	}
 
-	if (workPlase == "Unemployee")
+	if (_workPlase == "Unemployee")
 		dataLineAdult.append("Unemployee.");
 	else
 	{
 		dataLineAdult.append("Plase of work: ")
-			.append(workPlase)
+			.append(_workPlase)
 			.append(".");
 	}
 	return dataLineAdult;
@@ -50,12 +50,12 @@ unsigned int Adult::GetAge()
 
 void Adult::SetWorkPlase(string WorkPlase)
 {
-	workPlase = WorkPlase;
+	_workPlase = WorkPlase;
 }
 
 string Adult::GetWorkPlase()
 {
-	return workPlase;
+	return _workPlase;
 }
 
 //Создание рандомного взрослого
@@ -97,7 +97,7 @@ Adult* Adult::RandomAdult()
 		{
 			Adult *adultWomen = new Adult;
 
-			unsigned int womenRandomIndex = rand() % 8 + 8;
+			unsigned int womenRandomIndex = rand() % 8 + 7;
 			string nameWomen = name[womenRandomIndex];
 			unsigned int yearsWomen = rand() % 83 + 18;
 
