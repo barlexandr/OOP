@@ -47,14 +47,16 @@ int main()
 		if (find->GetAge() < 18)
 		{
 			cout << "This is a child." << endl;
-			Child *child = (Child*)find;
-			cout << child->GetDiscription() << endl;
+			//Child *child = (Child*)find;
+			//cout << child->GetDiscription() << endl;
+			cout << find->GetDiscription() << endl;//Полиморфизм
 		}
 		else
 		{
 			cout << "This is an adult." << endl;
-			Adult *adult = (Adult*)find;
-			cout << adult->GetDiscription() << endl;
+			//Adult *adult = (Adult*)find;
+			//cout << adult->GetDiscription() << endl;
+			cout << find->GetDiscription() << endl; //полиморфизм
 		}
 
 
